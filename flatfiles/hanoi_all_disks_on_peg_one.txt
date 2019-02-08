@@ -45,6 +45,7 @@ fact: (larger disk2 disk1)
 
 fact: (ontop disk1 disk2)
 fact: (ontop disk2 disk3)
+fact: (ontop disk3 disk4)
 fact: (ontop disk4 disk5)
 fact: (ontop disk5 base1)
 
@@ -55,6 +56,6 @@ fact: (empty peg2)
 fact: (empty peg3)
 
 rule: ((top ?disk ?initial) (empty ?target) -> (movable ?disk ?initial ?target))
-rule: ((top ?diskA ?initial) (top ?diskB ?target) (larger ?diskB ?diskA) -> (movable ?disk ?initial ?target))
+rule: ((top ?diskA ?initial) (top ?diskB ?target) (larger ?diskB ?diskA) -> (movable ?diskA ?initial ?target))
 
 
