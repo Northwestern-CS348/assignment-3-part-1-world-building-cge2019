@@ -18,3 +18,37 @@ fact: (pred obj1 obj2)
 rule: ((pred obj1 obj2) (pred obj2 obj3)) -> (pred obj1 obj3)
 
 """
+(INST disk1 disk)
+(INST disk2 disk)
+(INST disk3 disk)
+(INST disk4 disk)
+(INST disk5 disk)
+
+(INST peg1 peg)
+(INST peg2 peg)
+(INST peg3 peg)
+
+(INST base1 base)
+
+(ON disk1 peg1)
+(ON disk2 peg1)
+(ON disk3 peg1)
+(ON disk4 peg1)
+(ON disk5 peg1)
+
+(LARGER disk5 disk4)
+(LARGER disk4 disk3)
+(LARGER disk3 disk2)
+(LARGER disk2 disk1)
+
+((LARGER ?x ?y) (LARGER ?y ?z) -> (LARGER ?x ?z))
+
+(TOP disk1 peg1)
+(TOP empty peg2)
+(TOP empty peg3)
+
+(MOVEABLE disk1 peg1 peg2)
+
+((TOP ?diskX ?initial)(TOP empty ?target)or(LARGER ?diskX (TOP ?diskY ?target))  -> (MOVABLE ?disk ?initial ?target))
+
+
